@@ -1,0 +1,49 @@
+@using DemoWeb.Models;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model DemoWeb.Models.BookModel;
+<html>
+   <head>
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true"/>
+        <script src="~/js/site.min.js" asp-append-version="true" ></script>
+   </head>
+    <body>
+        <form  asp-action="Create" asp-controller="Book" method="post">
+            <div class="container">
+                <div class="row">
+                   <h1>新增</h1>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                                <label for="BookName">@Html.DisplayNameFor(x=>x.BookName)</label>
+                                @Html.TextBoxFor(x=>x.BookName,new {@class="form-control"})
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="Author">@Html.DisplayNameFor(x=>x.Author)</label>
+                            @Html.TextBoxFor(x=>x.Author,new {@class="form-control"})
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="PublishingHouse">@Html.DisplayNameFor(x=>x.PublishingHouse)</label>
+                            @Html.TextBoxFor(x=>x.PublishingHouse,new {@class="form-control"})
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <label for="Price">@Html.DisplayNameFor(x=>x.Price)</label>
+                            @Html.TextBoxFor(x=>x.Price,new {@class="form-control"})
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="pull-right">
+                            <button class="btn btn-info btn-sm">新增</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </form>
+    </body>
+</html>

@@ -1,0 +1,5 @@
+{
+    "ConnectionStrings": {
+      "DefaultConnection": "Data Source=localhost;User ID=josh-PC\\josh;Initial Catalog=Demo;Integrated Security=True;"
+    }
+ }
