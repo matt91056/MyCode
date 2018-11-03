@@ -1,6 +1,6 @@
 @using DemoWeb.Models;
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model IEnumerable<DemoWeb.Models.BookModel>
+@model PagedResult<DemoWeb.Models.BookModel>
 @{ 
   string name_sort = @ViewData["NameSortParm"].ToString();
   string price_sort = @ViewData["PriceSortParm"].ToString();
@@ -74,7 +74,7 @@
                             </tr>
                       </thead>
                       <tbody>
-                           @foreach (var item in Model)
+                           @foreach (var item in Model.Results)
                             { 
                                 <tr>
                                     <td>@Html.DisplayFor(m => item.BookName)</td>
@@ -89,6 +89,9 @@
                             }
                       </tbody>
                   </table>
+             </div>
+             <div class="row">
+                 @Html.Partial("_Pager",Model)
              </div>
         </div>
     </body>

@@ -22,7 +22,7 @@ namespace DemoWeb.Controllers
             rep = new BaseRepository<BookModel>(context);
         }
         [HttpGet]
-        public  IActionResult Index(string sortOrder,string searchStr){
+        public  IActionResult Index(string sortOrder,string searchStr,int page = 1){
             ViewData["NameSortParm"] =  string.IsNullOrEmpty(sortOrder)  ? "name_desc" : "";
             ViewData["PriceSortParm"] = sortOrder == "price_desc" ? "price_asc" : "price_desc";
             ViewBag.SearchTxt = string.IsNullOrEmpty(searchStr) ? "" : searchStr;
@@ -32,7 +32,8 @@ namespace DemoWeb.Controllers
                 books = books.Where(x=>x.BookName.Contains(searchStr));
             }
             books = BooksSort(books,sortOrder);
-            return View(books);
+            PagedResult<BookModel> result  = books.GetPaged(page,10);
+            return View(result);
         }
         [HttpPost]
         public IActionResult Index(string searchStr){

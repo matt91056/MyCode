@@ -47,3 +47,6 @@ C:\Users\josh\Desktop\DemoWeb\obj\Debug\netcoreapp2.1\DemoWeb.dll
 C:\Users\josh\Desktop\DemoWeb\obj\Debug\netcoreapp2.1\DemoWeb.pdb
 C:\Users\josh\Desktop\DemoWeb\obj\Debug\netcoreapp2.1\DemoWeb.csproj.CopyComplete
 C:\Users\josh\Desktop\DemoWeb\obj\Debug\netcoreapp2.1\Razor\Views\Book\Update.g.cshtml.cs
+C:\Users\josh\Desktop\DemoWeb\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Components\PagerVc\Pager.g.cshtml.cs
+C:\Users\josh\Desktop\DemoWeb\obj\Debug\netcoreapp2.1\Razor\Views\Book\Components\PagerVc\Default.g.cshtml.cs
+C:\Users\josh\Desktop\DemoWeb\obj\Debug\netcoreapp2.1\Razor\Views\Book\_Pager.g.cshtml.cs
