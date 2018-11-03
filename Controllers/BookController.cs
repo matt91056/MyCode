@@ -25,6 +25,7 @@ namespace DemoWeb.Controllers
         public  IActionResult Index(string sortOrder,string searchStr){
             ViewData["NameSortParm"] =  string.IsNullOrEmpty(sortOrder)  ? "name_desc" : "";
             ViewData["PriceSortParm"] = sortOrder == "price_desc" ? "price_asc" : "price_desc";
+            ViewBag.SearchTxt = string.IsNullOrEmpty(searchStr) ? "" : searchStr;
             var books = rep.GetAll();
             if(!string.IsNullOrEmpty(searchStr))
             {
@@ -87,9 +88,14 @@ namespace DemoWeb.Controllers
         }
         [HttpPost]
         public IActionResult Delete(int id){
-            BookModel book  =  rep.GetOne(x=>x.Id == id);
-            rep.Delete(book);
-            return RedirectToAction("Index");
+            try{
+                BookModel book  =  rep.GetOne(x=>x.Id == id);
+                rep.Delete(book);
+                return Content("Y");
+            }
+            catch(Exception e){
+                return Content("N");
+            }
         }
         [NonAction] 
         private IQueryable<BookModel> BooksSort(IQueryable<BookModel> books , string sortOrder){
